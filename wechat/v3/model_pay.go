@@ -101,6 +101,8 @@ type SubOrders struct {
 	OutTradeNo    string         `json:"out_trade_no"`        // 商户系统内部订单号，只能是数字、大小写字母_-*且在同一个商户号下唯一
 	SubMchid      string         `json:"sub_mchid"`           // 二级商户商户号，由微信支付生成并下发。服务商子商户的商户号，被合单方。直连商户不用传二级商户号
 	Amount        *CombineAmount `json:"amount"`              // 订单金额信息，当支付成功时返回该字段
+	PromotionDetail []*PromotionDetail `json:"promotion_detail,omitempty"` // 优惠功能，享受优惠时返回该字段
+
 }
 
 type CombineAmount struct {
